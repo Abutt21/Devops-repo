@@ -1,19 +1,31 @@
-# First stage: complete build environment
-FROM maven:3.5.0-jdk-8-alpine AS builder
-
-# add pom.xml and source code
-ADD ./pom.xml pom.xml
-ADD ./src src/
-
-# package jar
-RUN mvn clean package
-
-# Second stage: minimal runtime environment
-From openjdk:8-jre-alpine
-
-# copy jar from the first stage
-COPY --from=builder target/my-app-1.0-SNAPSHOT.jar my-app-1.0-SNAPSHOT.jar
-
-EXPOSE 8080
-
-CMD ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
+pipeline {
+  agent any
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'docker build -t lloydmatereke/jenkins-docker-hub .'
+      }
+    }
+    stage('Login') {
+      steps {
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh 'docker push lloydmatereke/jenkins-docker-hub'
+      }
+    }
+  }
+  post {
+    always {
+      sh 'docker logout'
+    }
+  }
+}

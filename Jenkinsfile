@@ -4,12 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'Jenkinsfile'
+                sh 'docker build -t myimage/myapp:2.0 .
+docker images'
             }
         }
         stage('Run') {
             steps {
-                sh 'Jenkinsfile'
+                sh 'docker build -t myimage/myapp:2.0 .
+docker images'
             }
         }
     }

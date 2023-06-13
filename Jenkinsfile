@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'javac BubbleSort.java'
+                sh 'javac Jenkinsfile.java'
             }
         }
         stage('Run') {
             steps {
-                sh 'java BubbleSort'
+                sh 'java Jenkinsfile'
             }
         }
     }

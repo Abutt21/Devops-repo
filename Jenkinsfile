@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'javac Jenkinsfile.java'
+                sh 'javac Jenkinsfile'
             }
         }
         stage('Run') {
             steps {
-                sh 'java Jenkinsfile'
+                sh 'Jenkinsfile'
             }
         }
     }

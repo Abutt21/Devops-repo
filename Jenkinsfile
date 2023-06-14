@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'r build -t myimage/myapp:2.0 .
-docker images'
+                sh 'docker build -t myimage/myapp:2.0 .
             }
         }        
     }

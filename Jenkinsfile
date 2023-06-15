@@ -1,9 +1,13 @@
 pipeline {
-       stages {
-        stage('Build') {
+    agent any
+         
+        stage('Docker Build') {
             steps {
-                sh 'dockerbuild -t myimage/myapp:2.0' .
+                // Build the Docker image
+                // Make sure Docker is installed on the Jenkins agent
+                sh 'docker build -t myimage/myapp:2.0 .'
             }
-        }       
-       
-       }
+        }
+        
+      }
+}

@@ -1,7 +1,7 @@
 pipeline {
     agent any
          
-        stage('Docker') {
+        stage('Docker Images') {
             steps {
                                
                 sh 'docker ps'

@@ -1,10 +1,9 @@
 pipeline {
     agent any
          
-        stage('Docker Build') {
+        stage('Docker') {
             steps {
-                // Build the Docker image
-                
+                               
                 sh 'docker ps'
             }
         }

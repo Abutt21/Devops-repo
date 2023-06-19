@@ -16,6 +16,8 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage('build docker image') {
+            
         sh 'docker build -t myimage/myapp:2.0 ' {
                      
             }

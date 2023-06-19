@@ -1,24 +1,29 @@
 pipeline {
     agent any
+    
     stages {
         stage('Check docker process') {
             steps {
                 sh 'docker ps'
             }
         }
+        
         stage('Check docker images') {
             steps {
                 sh 'docker images'
             }
         }
-        stage('Check files ') {
+        
+        stage('Check files') {
             steps {
                 sh 'ls'
             }
         }
-        stage('build docker images') {
+        
+        stage('Build docker images') {
             steps {
-                    sh 'docker build-t myimage/myapp:2.0 '
+                sh 'docker build -t myimage/myapp:2.0 .'
             }
-                       
+        }
     }
+}

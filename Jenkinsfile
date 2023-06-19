@@ -21,5 +21,4 @@ pipeline {
         sh 'docker build -t myimage/myapp:2.0 ' {
                      
             }
-
         }

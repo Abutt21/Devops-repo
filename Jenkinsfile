@@ -28,7 +28,7 @@ pipeline {
         
         stage('Run Docker container') {
             steps {
-                sh 'docker run -d --name nginx-p 8080:80 myimage/myapp:2.0'
+                sh 'docker run -d --name nginx-p myimage/myapp:2.0'
             }
         }
     }

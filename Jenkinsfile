@@ -25,5 +25,11 @@ pipeline {
                 sh 'docker build -t myimage/myapp:2.0 .'
             }
         }
+        
+        stage('Run Docker container') {
+            steps {
+                sh 'docker run -d --name mycontainer -p 8080:80 myimage/myapp:2.0'
+            }
+        }
     }
 }

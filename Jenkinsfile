@@ -16,8 +16,8 @@ pipeline {
                 sh 'ls'
             }
         }
-         sh 'docker build -t myimage/myapp:2.0 ' 
-                            
+         'docker build -t myimage/myapp:2.0 ' 
+                     
             }
         }  
 

@@ -36,5 +36,13 @@ pipeline {
                 sh 'docker run -d --name git myimage/myapp:2.0'
             }
         }
+        
+        stage('Run Java code') {
+            steps {
+                echo 'Running Java code...'
+                sh 'javac HelloWorld.java'
+                sh 'java HelloWorld'
+            }
+        }
     }
 }

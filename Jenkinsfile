@@ -33,7 +33,7 @@ pipeline {
         stage('Run Docker container') {
             steps {
                 echo 'Running Docker container...'
-                sh 'docker run -d --name nginx-p myimage/myapp:2.0'
+                sh 'docker run -d --name danish myimage/myapp:2.0'
             }
         }
     }

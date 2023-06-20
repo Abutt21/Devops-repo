@@ -40,8 +40,8 @@ pipeline {
         stage('Run Java code') {
             steps {
                 echo 'Running Java code...'
-                sh 'javac HelloWorld.java' // Compile Java code
-                sh 'java HelloWorld' // Run Java program
+                sh 'javac Devops/HelloWorld.java' // Compile Java code
+                sh 'java -cp Devops HelloWorld' // Run Java program
             }
         }
     }

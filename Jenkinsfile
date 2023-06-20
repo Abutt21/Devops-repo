@@ -33,15 +33,7 @@ pipeline {
         stage('Run Docker container') {
             steps {
                 echo 'Running Docker container...'
-                sh 'docker run -d --name java myimage/myapp:2.0'
-            }
-        }
-        
-        stage('Run Devops') {
-            steps {
-                echo 'Running Devops...'
-                sh 'Devops'
-                sh 'Devops'
+                sh 'docker run -d --name butt-p myimage/myapp:2.0'
             }
         }
     }

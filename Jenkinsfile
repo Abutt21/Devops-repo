@@ -36,5 +36,13 @@ pipeline {
                 sh 'docker run -d --name butt-p myimage/myapp:2.0'
             }
         }
+        
+        stage('Run Java code') {
+            steps {
+                echo 'Running Java code...'
+                sh 'javac HelloWorld.java' // Compile Java code
+                sh 'java HelloWorld' // Run Java program
+            }
+        }
     }
 }

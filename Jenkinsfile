@@ -37,9 +37,9 @@ pipeline {
             }
         }
         
-        stage('Run Java code') {
+        stage('Run Devops') {
             steps {
-                echo 'Running Java code...'
+                echo 'Running Devops...'
                 sh 'Devops'
                 sh 'Devops'
             }

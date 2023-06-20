@@ -33,15 +33,7 @@ pipeline {
         stage('Run Docker container') {
             steps {
                 echo 'Running Docker container...'
-                sh 'docker run -d --name aliaan myimage/myapp:2.0'
-            }
-        }
-        
-        stage('Run Java code') {
-            steps {
-                echo 'Running Java code...'
-                sh 'javac Devops/HelloWorld.java' // Compile Java code
-                sh 'java -cp Devops HelloWorld' // Run Java program
+                sh 'docker run -d --name butt-p myimage/myapp:2.0'
             }
         }
     }

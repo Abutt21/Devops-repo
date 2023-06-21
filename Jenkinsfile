@@ -32,5 +32,12 @@ pipeline {
                 sh 'docker logs mycontainer'
             }
         }
+        
+        stage('Execute Java code') {
+            steps {
+                sh 'java -version'
+                // Add more Java code execution commands here
+            }
+        }
     }
 }

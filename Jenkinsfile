@@ -28,7 +28,7 @@ pipeline {
         
         stage('Run Docker container') {
             steps {
-                sh 'docker run -d --name linux myimage/myapp:2.0'
+                sh 'docker run -d --name docker myimage/myapp:2.0'
                 sh 'docker logs mycontainer'
             }
         }

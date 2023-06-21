@@ -25,5 +25,11 @@ pipeline {
                 sh 'docker build -t myimage/myapp:2.0 .'
             }
         }
+        
+        stage('Run Docker container') {
+            steps {
+                sh 'docker run -d --name nginx myimage/myapp:2.0'
+            }
+        }
     }
 }

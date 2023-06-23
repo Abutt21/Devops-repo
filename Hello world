@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Package') {
             steps {
                 script {
-                    sh 'cean package'
+                    sh 'mvn clean package'
                 }
             }
         }

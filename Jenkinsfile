@@ -2,34 +2,23 @@ pipeline {
     agent any
     
     stages {
-        stage('Check docker process') {
-            steps {
-                sh 'docker ps'
-            }
-        }
-        
-        stage('Check docker images') {
-            steps {
-                sh 'docker images'
-            }
-        }
-        
         stage('Check files') {
             steps {
                 sh 'ls'
             }
         }
         
-        stage('Build docker images') {
+        stage('Build and Deploy') {
             steps {
-                sh 'docker build -t myimage/myapp:2.0 .'
+                // Add your build and deployment steps here
+                echo 'Build and deployment steps go here'
             }
         }
         
-        stage('Run Docker container') {
+        stage('Run Tests') {
             steps {
-                sh 'docker run -d --name sonarqube myimage/myapp:2.0'
-                sh 'docker logs mycontainer'
+                // Add your test execution steps here
+                echo 'Test execution steps go here'
             }
         }
     }
